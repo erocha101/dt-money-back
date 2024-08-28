@@ -1,4 +1,4 @@
-import { IsNumber, IsString, MinLength } from 'class-validator';
+import { IsDateString, IsNumber, IsString, MinLength } from 'class-validator';
 
 export class CreateTransactionDTO {
   @IsString({ message: 'Campo Title deve ser preenchido' })
@@ -13,4 +13,7 @@ export class CreateTransactionDTO {
 
   @IsString({ message: 'Campo Type deve ser preenchido' })
   type: string;
+
+  @IsDateString()
+  data: Date;
 }
